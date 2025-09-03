@@ -1,0 +1,92 @@
+body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top, #87ceeb, #fff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Cartoon body */
+    .cartoon {
+      position: relative;
+      width: 200px;
+      height: 300px;
+      background: #f4c542;
+      border-radius: 100px;
+      animation: dance 2s infinite alternate ease-in-out;
+    }
+
+    /* Eyes */
+    .eye {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: #fff;
+      border-radius: 50%;
+      top: 60px;
+    }
+    .eye.left { left: 40px; }
+    .eye.right { right: 40px; }
+
+    /* Pupils */
+    .pupil {
+      width: 15px;
+      height: 15px;
+      background: black;
+      border-radius: 50%;
+      margin: 7px auto;
+      animation: blink 3s infinite;
+    }
+
+    /* Mouth */
+    .mouth {
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 40px;
+      background: #d6336c;
+      border-radius: 0 0 40px 40px;
+    }
+
+    /* Arms */
+    .arm {
+      position: absolute;
+      width: 40px;
+      height: 100px;
+      background: #f4c542;
+      top: 100px;
+      border-radius: 20px;
+      animation: wave 2s infinite alternate;
+    }
+    .arm.left
+     { 
+      left: -40px; 
+      /*transform-origin: top right;*/
+     }
+    .arm.right
+     {
+
+      right: -40px;
+       transform-origin: top left;
+        }
+
+    /* Keyframes */
+    @keyframes blink {
+      0%, 90%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.1); }
+    }
+
+    @keyframes dance {
+      0% { transform: translateY(0) rotate(-5deg); }
+      100% { transform: translateY(-20px) rotate(5deg); }
+    }
+
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(30deg); }
+    }
